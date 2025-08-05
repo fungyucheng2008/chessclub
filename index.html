@@ -262,6 +262,29 @@ const quotes = [
   loadPage("home.html");
 });
 </script>
+<script>
+  // Load and inject page content based on the URL hash
+  function loadPageFromHash() {
+    const hash = window.location.hash || "#/home";
+    const page = hash.replace("#/", "") || "home";
+    fetch(`${page}.html`)
+      .then(res => {
+        if (!res.ok) throw new Error("Page not found");
+        return res.text();
+      })
+      .then(html => {
+        document.getElementById("dynamic-content").innerHTML = html;
+      })
+      .catch(err => {
+        document.getElementById("dynamic-content").innerHTML = "<h2>Page not found</h2>";
+      });
+  }
 
+  // Trigger on load
+  document.addEventListener("DOMContentLoaded", loadPageFromHash);
+
+  // Trigger on hash change (e.g., clicking a menu link)
+  window.addEventListener("hashchange", loadPageFromHash);
+</script>
 </body>
 </html>

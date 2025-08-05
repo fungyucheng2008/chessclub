@@ -1,82 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NYP Chess Club</title>
-  <link rel="stylesheet" href="css/style.css"> 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   NYP Chess Club
+  </title>
+  <link href="css/style.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <style>
-    .error-message {
+   .error-message {
       color: red;
       font-size: 0.9rem;
       margin-top: 4px;
     }
   </style>
-</head>
-<body>
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-lg">
-  <div class="container">
-    <a href="/" class="navbar-brand d-flex align-items-center" data-target-page="home.html">
-      <img src="images/logo.png" class="me-2" style="height:70px;" alt="NYP Chess Club Logo">
-      <span>NYP Chess Club</span>
+ </head>
+ <body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-lg">
+   <div class="container">
+    <a class="navbar-brand d-flex align-items-center" data-target-page="home.html" href="/">
+     <img src="images/logo.png" alt="NYP Chess Club Logo" class="logo-img">
+     <span>
+      NYP Chess Club
+     </span>
     </a>
-    <button class="navbar-toggler" data-bs-toggle="collapse" type="button" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
+    <button class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
+     <span class="navbar-toggler-icon">
+     </span>
     </button>
-    <div id="navbarNav" class="collapse navbar-collapse justify-content-end">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" data-target-page="home.html" href="/">Home</a></li>
-        <li class="nav-item"><a href="#/about" class="nav-link">About</a></li>
-        <li class="nav-item"><a href="#/learn" class="nav-link">Learn</a></li>
-        <li class="nav-item"><a href="#/event" data-target-page="event.html" class="nav-link">Event</a></li>
-        <li class="nav-item"><a href="#/contact" class="nav-link">Contact</a></li>
-        <li class="nav-item"><a class="btn btn-warning ms-3 fw-bold" href="#/join">Join</a></li>
-      </ul>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+     <ul class="navbar-nav">
+      <li class="nav-item">
+       <a class="nav-link" data-target-page="home.html" href="/">
+        Home
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link" data-target-page="about.html" href="about.html">
+        About
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link" data-target-page="learn.html" href="learn.html">
+        Learn
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link" data-target-page="event.html" href="event.html">
+        Event
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link" data-target-page="contact.html" href="contact.html">
+        Contact
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="btn btn-warning ms-3 fw-bold" data-target-page="join.html" href="join.html">
+        Join
+       </a>
+      </li>
+     </ul>
     </div>
+   </div>
+  </nav>
+  <!-- countdown timer display -->
+  <div class="fw-bold fs-4 text-danger text-center py-3" id="countdown-timer">
   </div>
-</nav>
-
-<!-- countdown timer -->
-<div id="countdown-timer" class="fw-bold fs-4 text-danger text-center py-3"></div>
-
-<div id="dynamic-content"></div>
-
-<footer class="bg-primary text-warning py-5" style="background-color:#0a1930 !important;">
-  <div class="container">
+  <div id="dynamic-content">
+  </div>
+  <footer class="bg-primary text-warning py-5" style="background-color:#0a1930 !important;">
+   <div class="container">
     <div class="row">
-      <div class="col-md-4">
-        <h5 class="fw-bold text-warning">NYP Chess Club</h5>
-        <p>We're a community that loves chess, and we hope you'll join us to learn, play, and have fun together!</p>
-      </div>
-      <div class="col-md-4">
-        <h5 class="fw-bold text-warning">Quick Links</h5>
-        <ul class="list-unstyled">
-          <li><a class="fw-semibold text-warning text-decoration-none" href="/" data-target-page="home.html">Home</a></li>
-          <li><a class="fw-semibold text-warning text-decoration-none" href="/about" data-target-page="about.html">About</a></li>
-          <li><a class="fw-semibold text-warning text-decoration-none" data-target-page="learn.html" href="/learn">Learn</a></li>
-          <li><a href="/event" data-target-page="event.html" class="fw-semibold text-warning text-decoration-none">Event</a></li>
-          <li><a href="/contact" class="fw-semibold text-warning text-decoration-none" data-target-page="contact.html">Contact</a></li>
-          <li><a href="/join" data-target-page="join.html" class="fw-semibold text-warning text-decoration-none">Join</a></li>
-        </ul>
-      </div>
-      <div class="col-md-4">
-        <h5 class="fw-bold text-warning">Meeting Info</h5>
-        <p>Tues & Thurs<br>3:30 PM - 4:30 PM<br>Blk L, Level 3, Rm L315<br>Nanyang Polytechnic</p>
-      </div>
+     <div class="col-md-4">
+      <h5 class="fw-bold text-warning">
+       NYP Chess Club
+      </h5>
+      <p>
+       We're a community that loves chess, and we hope you'll join us to learn, play, and have fun together!
+      </p>
+     </div>
+     <div class="col-md-4">
+      <h5 class="fw-bold text-warning">
+       Quick Links
+      </h5>
+      <ul class="list-unstyled">
+       <li>
+        <a class="fw-semibold text-warning text-decoration-none" data-target-page="home.html" href="/">
+         Home
+        </a>
+       </li>
+       <li>
+        <a class="fw-semibold text-warning text-decoration-none" data-target-page="about.html" href="about.html">
+         About
+        </a>
+       </li>
+       <li>
+        <a class="fw-semibold text-warning text-decoration-none" data-target-page="learn.html" href="learn.html">
+         Learn
+        </a>
+       </li>
+       <li>
+        <a class="fw-semibold text-warning text-decoration-none" data-target-page="event.html" href="event.html">
+         Event
+        </a>
+       </li>
+       <li>
+        <a class="fw-semibold text-warning text-decoration-none" data-target-page="contact.html" href="contact.html">
+         Contact
+        </a>
+       </li>
+       <li>
+        <a class="fw-semibold text-warning text-decoration-none" data-target-page="join.html" href="join.html">
+         Join
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="col-md-4">
+      <h5 class="fw-bold text-warning">
+       Meeting Info
+      </h5>
+      <p>
+       Tues &amp; Thurs
+       <br/>
+       3:30 PM - 4:30 PM
+       <br/>
+       Blk L, Level 3, Rm L315
+       <br/>
+       Nanyang Polytechnic
+      </p>
+     </div>
     </div>
     <div class="pt-4 text-center border-top mt-4 border-secondary">
-      © 2025 NYP Chess Club. Part of NYP Student Activities.
+     © 2025 NYP Chess Club. Part of NYP Student Activities.
     </div>
-  </div>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- countdown timer-->
-<script>
-const eventDate = new Date("2025-09-08T10:00:00");
+   </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+  </script>
+  
+  <script>
+  // ===== Countdown Timer ===== 
+  // Displays remaining time until NYP NDP Chess Competition
+   const eventDate = new Date("2025-09-08T10:00:00");
 function updateCountdown() {
   const now = new Date();
   const diff = eventDate - now;
@@ -95,14 +163,16 @@ function updateCountdown() {
 }
 updateCountdown();
 const timer = setInterval(updateCountdown, 1000);
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-
-<!-- SPA loader -->
-<script>
-
-
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js">
+  </script>
+  <!-- ===== SPA Loader =====  -->
+  <!-- Dynamically loads page content without full reload -->
+  <script>
+   document.addEventListener("DOMContentLoaded", function () {
+  const links = document.querySelectorAll("[data-target-page]");
+  const dynamicContent = document.getElementById("dynamic-content");
+// Fetch chess blitz rating from Chess.com API for a given username
 async function fetchBlitzRating(username) {
   try {
     const res = await fetch(`https://api.chess.com/pub/player/${encodeURIComponent(username)}/stats`);
@@ -113,7 +183,8 @@ async function fetchBlitzRating(username) {
     console.error("fetchBlitzRating error:", e);
     return "Error";
   }
-
+}
+// Update all blitz ratings on the page
 async function updateBlitzRatings() {
   const spans = document.querySelectorAll(".blitz-rating[data-username]");
   for (const span of spans) {
@@ -123,6 +194,7 @@ async function updateBlitzRatings() {
     span.textContent = rating;
   }
 }
+  // Main SPA loader function
   async function loadPage(page) {
     try {
       const response = await fetch(page.split("?")[0]);
@@ -147,17 +219,9 @@ async function updateBlitzRatings() {
           };
           updateCounter();
         }updateBlitzRatings();
-const quotes = [
-  "Some people think that if their opponent plays a beautiful game, it’s okay to lose. I don’t. You have to be merciless.",
-  "I’ve never been much of a materialist. The joy of playing chess is enough.",
-  "Self-confidence is very important. If you don’t think you can win, you will take it easy on yourself.",
-  "I enjoy the game of chess and the challenge it presents to me. It keeps me sharp.",
-  "I don’t think it’s possible to become a chess genius, but it is possible to work hard and become good at it.",
-  "Without the element of enjoyment, it is not worth trying to excel at anything.",
-  "You have to love the game and be driven by your own motivation.",
-  "I like to win in a straightforward way, not by tricks or traps.",
-  "I’m more concerned about being respected than being liked.",
-  "Some people just don’t have the killer instinct, but in chess, it’s necessary."
+//The quote can be randomized. For UX purpose, we decided fixed quote is better aesthetically
+const quotes = [ 
+  "I’ve never been much of a materialist. The joy of playing chess is enough. - Carlsen"
 ];
 
   const quoteElement = document.getElementById("quote");
@@ -177,7 +241,8 @@ const quotes = [
         const phoneError = document.createElement('div');
         phoneError.classList.add('error-message');
         document.getElementById('phone').after(phoneError);
-
+        // ===== Form Validation =====
+        // Validates email and phone, triggers confetti on success
         if (joinForm) {
           joinForm.addEventListener('submit', function (e) {
             e.preventDefault();
@@ -192,12 +257,12 @@ const quotes = [
             let isValid = true;
 
             // check if email is actually a email
-            const emailPattern = /^[^\s@]+@(gmail\.com|yahoo\.com|outlook\.com|hotmail\.com|icloud\.com)$/i;
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/i;
             if (!emailPattern.test(email)) {
-               emailError.textContent = "Please use an email from Gmail, Yahoo, Outlook, Hotmail, or iCloud.";
-               isValid = false;
-	    } 
-            // check if phone number is actually a phone number
+              emailError.textContent = "Please enter a valid email address.";
+              isValid = false;
+            }
+            // check if phone number is actually a phone number. this require 8 digit number starting with 8 or 9
             const phonePattern = /^[89]\d{7}$/;
             if (!phonePattern.test(phone)) {
                phoneError.textContent = "Please enter an 8-digit number starting with 8 or 9."; 
@@ -212,11 +277,11 @@ const quotes = [
   scalar: 1.6           // make particles bigger
 });
 
-            loadPage(`thankyou.html?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&phone=${encodeURIComponent(phone)}&school=${encodeURIComponent(school)}`);
+loadPage(`thankyou.html?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&phone=${encodeURIComponent(phone)}&school=${encodeURIComponent(school)}`);
           });
-        }
-      }
-
+                }
+                    }
+                    
       // After submitting the form
       if (page.startsWith("thankyou.html")) {
         const queryString = page.split("?")[1] || "";
@@ -258,30 +323,6 @@ const quotes = [
 
   loadPage("home.html");
 });
-</script>
-<script>
-  // Load and inject page content based on the URL hash
-  function loadPageFromHash() {
-    const hash = window.location.hash || "#/home";
-    const page = hash.replace("#/", "") || "home";
-    fetch(`${page}.html`)
-      .then(res => {
-        if (!res.ok) throw new Error("Page not found");
-        return res.text();
-      })
-      .then(html => {
-        document.getElementById("dynamic-content").innerHTML = html;
-      })
-      .catch(err => {
-        document.getElementById("dynamic-content").innerHTML = "<h2>Page not found</h2>";
-      });
-  }
-
-  // Trigger on load
-  document.addEventListener("DOMContentLoaded", loadPageFromHash);
-
-  // Trigger on hash change (e.g., clicking a menu link)
-  window.addEventListener("hashchange", loadPageFromHash);
-</script>
-</body>
+  </script>
+ </body>
 </html>

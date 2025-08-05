@@ -4,9 +4,9 @@
       <h3 class="text-center mb-4">Join Us</h3>
 
       <div class="mb-4 text-center">
-        <video controls autoplay loop style="max-width:100%; border-radius: 8px;">
+        <video controls autoplay loop class="video-marketing">
           <source src="multimedia/marketing.mp4" type="video/mp4">
-          Your browser does not support the video tag.
+           Your browser does not support the video tag.
         </video>
       </div>
 
@@ -52,19 +52,19 @@
 </section>
 
 <script>
-document.getElementById('joinForm').addEventListener('submit', function(e) {
-  e.preventDefault();
+  document.getElementById('joinForm').addEventListener('submit', function(e) {
+    e.preventDefault();
 
-  const name = encodeURIComponent(document.getElementById('name').value);
-  const email = encodeURIComponent(document.getElementById('email').value);
-  const phone = encodeURIComponent(document.getElementById('phone').value);
-  const school = encodeURIComponent(document.getElementById('school').value);
+    const name   = encodeURIComponent(document.getElementById('name').value);
+    const email  = encodeURIComponent(document.getElementById('email').value);
+    const phone  = encodeURIComponent(document.getElementById('phone').value);
+    const school = encodeURIComponent(document.getElementById('school').value);
 
-  if (typeof loadPage === "function") {
-    loadPage(`thankyou.html?name=${name}&email=${email}&phone=${phone}&school=${school}`);
-  } else {
-    // reload page in case of error
-    window.location.href = `thankyou.html?name=${name}&email=${email}&phone=${phone}&school=${school}`;
-  }
-});
+    if (typeof loadPage === "function") {
+      loadPage(`thankyou.html?name=${name}&email=${email}&phone=${phone}&school=${school}`);
+    } else {
+      // reload page in case of error
+      window.location.href = `thankyou.html?name=${name}&email=${email}&phone=${phone}&school=${school}`;
+    }
+  });
 </script>

@@ -28,11 +28,11 @@
     <div id="navbarNav" class="collapse navbar-collapse justify-content-end">
       <ul class="navbar-nav">
         <li class="nav-item"><a class="nav-link" data-target-page="home.html" href="/">Home</a></li>
-        <li class="nav-item"><a href="/about" class="nav-link" data-target-page="about.html">About</a></li>
-        <li class="nav-item"><a href="/learn" class="nav-link" data-target-page="learn.html">Learn</a></li>
-        <li class="nav-item"><a href="/event" data-target-page="event.html" class="nav-link">Event</a></li>
-        <li class="nav-item"><a href="/contact" class="nav-link" data-target-page="contact.html">Contact</a></li>
-        <li class="nav-item"><a class="btn btn-warning ms-3 fw-bold" href="/join" data-target-page="join.html">Join</a></li>
+        <li class="nav-item"><a href="#/about" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="#/learn" class="nav-link">Learn</a></li>
+        <li class="nav-item"><a href="#/event" data-target-page="event.html" class="nav-link">Event</a></li>
+        <li class="nav-item"><a href="#/contact" class="nav-link">Contact</a></li>
+        <li class="nav-item"><a class="btn btn-warning ms-3 fw-bold" href="#/join">Join</a></li>
       </ul>
     </div>
   </div>
@@ -102,9 +102,7 @@ const timer = setInterval(updateCountdown, 1000);
 <!-- SPA loader -->
 <script>
 
-document.addEventListener("DOMContentLoaded", function () {
-  const links = document.querySelectorAll("[data-target-page]");
-  const dynamicContent = document.getElementById("dynamic-content");
+
 async function fetchBlitzRating(username) {
   try {
     const res = await fetch(`https://api.chess.com/pub/player/${encodeURIComponent(username)}/stats`);
@@ -115,7 +113,6 @@ async function fetchBlitzRating(username) {
     console.error("fetchBlitzRating error:", e);
     return "Error";
   }
-}
 
 async function updateBlitzRatings() {
   const spans = document.querySelectorAll(".blitz-rating[data-username]");

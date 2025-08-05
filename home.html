@@ -1,0 +1,161 @@
+<main id="dynamic-content">
+  <section class="bg-light py-5 text-center">
+    <div class="container">
+      <div style="display: flex;flex-direction:column;align-items:center;">
+        <img class="rounded-circle mb-2" alt="Magnus Carlsen" src="images/carlsen.jpeg" style="width:150px;height:150px;object-fit:cover;">
+        <iframe src="fide.html"
+          style="background:transparent;overflow:hidden;border:none;height:3em;width:300px;margin-bottom:15px;"
+          scrolling="no"></iframe>
+      </div>
+
+      <h1 class="display-4 fw-bold">
+        NYP<br><span class="text-primary">Chess Club</span>
+      </h1>
+      <p style="font-size:1.2rem;" class="fst-italic text-secondary mb-2">
+        think it, play it, win it
+      </p>
+      <p class="lead">
+        Make full use of your analytical skills with the NYP Chess Club!
+        Whether you're learning the basics or you're a seasoned player, our club provides a welcoming and focused environment for everyone to enjoy, grow, and challenge themselves through the game of chess.
+      </p>
+
+      <div class="row mt-5">
+        <div class="mb-4 col-md-4">
+          <div class="h-100 p-3 bg-white shadow-sm rounded">
+            <i class="bi bi-people mb-2 fs-1"></i>
+        <h4><span id="gamesCounter">0</span>+</h4>
+<p>Games Played Monthly</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="rounded h-100 shadow-sm p-3 bg-white">
+            <i class="bi bi-trophy mb-2 fs-1"></i>
+            <h4>1</h4>
+            <p>InterPoly Title Won</p>
+          </div>
+        </div>
+        <div class="mb-4 col-md-4">
+          <div class="rounded shadow-sm bg-white h-100 p-3">
+            <i class="bi bi-clock mb-2 fs-1"></i>
+            <h4>2x</h4>
+            <p>Training Sessions Weekly</p>
+          </div>
+        </div>
+      </div>
+
+<div class="mt-5">
+  <h3 class="fw-bold text-center mb-4">What Our Members Say</h3>
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+
+          <div class="carousel-item active">
+            <div class="card shadow-sm border-0">
+              <div class="d-flex card-body align-items-center">
+                <img alt="Melissa Tan" class="rounded-circle me-3" src="images/student1.jpg" style="width:70px;height:70px;object-fit:cover;">
+                <div class="text-start">
+                  <p class="mb-2 card-text">
+                    "NYP Chess Club is definitely the highlight of my poly life. I met cool and smart people there and made a lot of new friends."
+                  </p>
+                  <h6 class="card-subtitle text-muted">– Melissa Tan, Year 1, SIT</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="card shadow-sm border-0">
+              <div class="d-flex card-body align-items-center">
+                <img src="images/student2m.jpg" alt="Peter Tan" class="rounded-circle me-3" style="width:70px;height:70px;object-fit:cover;">
+                <div class="text-start">
+                  <p class="mb-2 card-text">
+                    "From 300+ FIDE to 1800 FIDE. I cannot believe I did it in a year."
+                  </p>
+                  <h6 class="text-muted card-subtitle">– Peter Tan, Year 2, School of Engineering</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="card shadow-sm border-0">
+              <div class="d-flex card-body align-items-center">
+                <img src="images/student5.jpg" alt="Han XiangRui" class="rounded-circle me-3" style="width:70px;height:70px;object-fit:cover;">
+                <div class="text-start">
+                  <p class="mb-2 card-text">
+                    "The leaders are chill and welcoming. I feel at ease in the club."
+                  </p>
+                  <h6 class="text-muted card-subtitle">– Han XiangRui, Year 1, SIT</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+      <div class="my-5">
+        <blockquote class="blockquote text-center">
+          <p id="quote" class="mb-3 fs-4 fst-italic"></p>
+        </blockquote>
+      </div>
+
+      <div class="my-5">
+  <h3 class="fw-bold text-center mb-4">Meet Our Committee</h3>
+  <div class="row g-4 justify-content-center">
+
+    <div class="col-md-3 col-6">
+      <div class="card border-0 text-center shadow-sm">
+        <img alt="Andy Lim" src="images/andy.jpg" class="mx-auto mt-3 card-img-top rounded-circle" style="width:100px;height:100px;object-fit:cover;">
+        <div class="card-body">
+          <h5 class="card-title mb-0">Andy Lim</h5>
+          <div class="text-primary mb-1">
+            Blitz: <span class="blitz-rating" data-username="andylim190168">Loading...</span>
+          </div>
+          <p class="small card-text text-muted">President</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="shadow-sm text-center card border-0">
+        <img alt="Jane Lee" src="images/student3.jpg" class="mx-auto mt-3 card-img-top rounded-circle" style="width:100px;height:100px;object-fit:cover;">
+        <div class="card-body">
+          <h5 class="mb-0 card-title">Jane Lee</h5>
+          <div class="mb-1 text-primary">
+            Blitz: <span class="blitz-rating" data-username="janelee77">Loading...</span>
+          </div>
+          <p class="text-muted card-text small">Vice President</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="border-0 card shadow-sm text-center">
+        <img class="mx-auto mt-3 rounded-circle card-img-top" src="images/student4.jpg" style="width:100px;height:100px;object-fit:cover;" alt="Rahul Kumar">
+        <div class="card-body">
+          <h5 class="mb-0 card-title">Rahul Kumar</h5>
+          <div class="mb-1 text-primary">
+            Blitz: <span class="blitz-rating" data-username="rahulkumar88">Loading...</span>
+          </div>
+          <p class="text-muted card-text small">Secretary</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>	
+
+    </div>
+  </section>
+</main>

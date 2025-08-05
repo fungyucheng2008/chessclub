@@ -1,0 +1,108 @@
+/* Main page style */
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+}
+
+/* Navigation bar thing*/
+.navbar {
+  background-color: white !important;
+  border-bottom: 1px solid #ddd; /* small divider */
+}
+.navbar-brand span {  /* text css */
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #0a1930 !important;
+}
+.navbar-nav .nav-link {
+  color: #0a1930 !important;
+  transition: color 0.3s ease;
+}
+.navbar-nav .nav-link:hover {
+  color: gold !important;
+}
+
+/* Banner and header */
+header, .hero-section {
+  position: relative;
+  background-color: white;
+  color: #0a1930;
+  padding: 4rem 2rem;
+  text-shadow: none;
+}
+
+/* Remove overlay*/
+header::before, .hero-section::before {
+  content: none;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #0a1930;
+  border: none;
+  transition: background 0.3s ease;
+}
+.btn-primary:hover {
+  background-color: #003366;
+}
+
+/* Cards */
+.card {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Form style */
+form .form-control, form .form-select {
+  border-radius: 8px;
+  box-shadow: none;
+  border: 1px solid #ccc;
+}
+form .form-control:focus, form .form-select:focus {
+  border-color: #003366;
+  box-shadow: 0 0 0 0.2rem rgba(0,51,102,0.25);
+}
+
+/* Footer style*/
+footer {
+  background-color: #0a1930 !important;
+  color: white;
+}
+footer h5 {
+  color: gold;
+}
+footer a {
+  color: gold;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Countdown Timer */
+#countdown-timer {
+  font-size: 1.5rem;
+  background: rgba(255, 0, 0, 0.1);
+  padding: 0.5rem;
+  border-radius: 6px;
+}
+
+/* Section Headings */
+h2, h3, h4 {
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #0a1930;
+}
+
+/* Video style */
+video {
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}

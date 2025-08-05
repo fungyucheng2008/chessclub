@@ -1,0 +1,70 @@
+<section class="join-us py-5">
+  <div class="container d-flex justify-content-center">
+    <div style="max-width: 500px; width:100%;" class="card shadow-lg p-4 border-0">
+      <h3 class="text-center mb-4">Join Us</h3>
+
+      <div class="mb-4 text-center">
+        <video controls autoplay loop style="max-width:100%; border-radius: 8px;">
+          <source src="multimedia/marketing.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <p class="mb-4 text-muted text-center">
+        Fill in your details below to become part of the NYP Chess Club.
+      </p>
+
+      <form id="joinForm">
+        <div class="mb-3">
+          <label class="form-label" for="name">Full Name</label>
+          <input id="name" name="name" class="form-control" required placeholder="Enter your full name" type="text">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="email">Email Address</label>
+          <input class="form-control" id="email" name="email" type="email" required placeholder="Enter your email">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="phone">Contact Number</label>
+          <input name="phone" class="form-control" id="phone" required placeholder="Enter your contact number" type="tel">
+        </div>
+
+        <div class="mb-3">
+          <label for="school" class="form-label">School</label>
+          <select required class="form-select" id="school" name="school">
+            <option selected disabled value="">Select your school</option>
+            <option value="School of Applied Science">School of Applied Science</option>
+            <option value="School of Business Management">School of Business Management</option>
+            <option value="School of Design & Media">School of Design & Media</option>
+            <option value="School of Engineering">School of Engineering</option>
+            <option value="School of Health & Social Sciences">School of Health & Social Sciences</option>
+            <option value="School of Information Technology">School of Information Technology</option>
+          </select>
+        </div>
+
+        <div class="d-grid">
+          <button class="btn btn-primary" type="submit">Join Now</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+document.getElementById('joinForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const name = encodeURIComponent(document.getElementById('name').value);
+  const email = encodeURIComponent(document.getElementById('email').value);
+  const phone = encodeURIComponent(document.getElementById('phone').value);
+  const school = encodeURIComponent(document.getElementById('school').value);
+
+  if (typeof loadPage === "function") {
+    loadPage(`thankyou.html?name=${name}&email=${email}&phone=${phone}&school=${school}`);
+  } else {
+    // reload page in case of error
+    window.location.href = `thankyou.html?name=${name}&email=${email}&phone=${phone}&school=${school}`;
+  }
+});
+</script>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NYP Chess Club</title>
+  <link rel="stylesheet" href="css/style.css"> 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .error-message {
+      color: red;
+      font-size: 0.9rem;
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-lg">
+  <div class="container">
+    <a href="/" class="navbar-brand d-flex align-items-center" data-target-page="home.html">
+      <img src="images/logo.png" class="me-2" style="height:70px;" alt="NYP Chess Club Logo">
+      <span>NYP Chess Club</span>
+    </a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" type="button" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="navbarNav" class="collapse navbar-collapse justify-content-end">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" data-target-page="home.html" href="/">Home</a></li>
+        <li class="nav-item"><a href="/about" class="nav-link" data-target-page="about.html">About</a></li>
+        <li class="nav-item"><a href="/learn" class="nav-link" data-target-page="learn.html">Learn</a></li>
+        <li class="nav-item"><a href="/event" data-target-page="event.html" class="nav-link">Event</a></li>
+        <li class="nav-item"><a href="/contact" class="nav-link" data-target-page="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="btn btn-warning ms-3 fw-bold" href="/join" data-target-page="join.html">Join</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- countdown timer -->
+<div id="countdown-timer" class="fw-bold fs-4 text-danger text-center py-3"></div>
+
+<div id="dynamic-content"></div>
+
+<footer class="bg-primary text-warning py-5" style="background-color:#0a1930 !important;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h5 class="fw-bold text-warning">NYP Chess Club</h5>
+        <p>We're a community that loves chess, and we hope you'll join us to learn, play, and have fun together!</p>
+      </div>
+      <div class="col-md-4">
+        <h5 class="fw-bold text-warning">Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a class="fw-semibold text-warning text-decoration-none" href="/" data-target-page="home.html">Home</a></li>
+          <li><a class="fw-semibold text-warning text-decoration-none" href="/about" data-target-page="about.html">About</a></li>
+          <li><a class="fw-semibold text-warning text-decoration-none" data-target-page="learn.html" href="/learn">Learn</a></li>
+          <li><a href="/event" data-target-page="event.html" class="fw-semibold text-warning text-decoration-none">Event</a></li>
+          <li><a href="/contact" class="fw-semibold text-warning text-decoration-none" data-target-page="contact.html">Contact</a></li>
+          <li><a href="/join" data-target-page="join.html" class="fw-semibold text-warning text-decoration-none">Join</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h5 class="fw-bold text-warning">Meeting Info</h5>
+        <p>Tues & Thurs<br>3:30 PM - 4:30 PM<br>Blk L, Level 3, Rm L315<br>Nanyang Polytechnic</p>
+      </div>
+    </div>
+    <div class="pt-4 text-center border-top mt-4 border-secondary">
+      © 2025 NYP Chess Club. Part of NYP Student Activities.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- countdown timer-->
+<script>
+const eventDate = new Date("2025-09-08T10:00:00");
+function updateCountdown() {
+  const now = new Date();
+  const diff = eventDate - now;
+  const timerEl = document.getElementById("countdown-timer");
+  if (!timerEl) return;
+  if (diff <= 0) {
+    timerEl.textContent = "Event Started!";
+    clearInterval(timer);
+    return;
+  }
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
+  timerEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s left to NYP NDP Chess Competition`;
+}
+updateCountdown();
+const timer = setInterval(updateCountdown, 1000);
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<!-- SPA loader -->
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+  const links = document.querySelectorAll("[data-target-page]");
+  const dynamicContent = document.getElementById("dynamic-content");
+async function fetchBlitzRating(username) {
+  try {
+    const res = await fetch(`https://api.chess.com/pub/player/${encodeURIComponent(username)}/stats`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    return data.chess_blitz?.last?.rating ?? "N/A";
+  } catch (e) {
+    console.error("fetchBlitzRating error:", e);
+    return "Error";
+  }
+}
+
+async function updateBlitzRatings() {
+  const spans = document.querySelectorAll(".blitz-rating[data-username]");
+  for (const span of spans) {
+    span.textContent = "Loading...";
+    const username = span.dataset.username;
+    const rating = await fetchBlitzRating(username);
+    span.textContent = rating;
+  }
+}
+  async function loadPage(page) {
+    try {
+      const response = await fetch(page.split("?")[0]);
+      const html = await response.text();
+      dynamicContent.innerHTML = html;
+
+      // counter
+      if (page === "home.html") {
+        const counterEl = document.getElementById('gamesCounter');
+        if (counterEl) {
+          let count = 0;
+          const target = 100;
+          const speed = 20;
+          const updateCounter = () => {
+            if (count < target) {
+              count++;
+              counterEl.textContent = count;
+              setTimeout(updateCounter, speed);
+            } else {
+              counterEl.textContent = target;
+            }
+          };
+          updateCounter();
+        }updateBlitzRatings();
+const quotes = [
+  "Some people think that if their opponent plays a beautiful game, it’s okay to lose. I don’t. You have to be merciless.",
+  "I’ve never been much of a materialist. The joy of playing chess is enough.",
+  "Self-confidence is very important. If you don’t think you can win, you will take it easy on yourself.",
+  "I enjoy the game of chess and the challenge it presents to me. It keeps me sharp.",
+  "I don’t think it’s possible to become a chess genius, but it is possible to work hard and become good at it.",
+  "Without the element of enjoyment, it is not worth trying to excel at anything.",
+  "You have to love the game and be driven by your own motivation.",
+  "I like to win in a straightforward way, not by tricks or traps.",
+  "I’m more concerned about being respected than being liked.",
+  "Some people just don’t have the killer instinct, but in chess, it’s necessary."
+];
+
+  const quoteElement = document.getElementById("quote");
+  if (quoteElement) {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    quoteElement.textContent = `“${quotes[randomIndex]}”`;
+  }
+      }
+
+      // handling incline error
+      if (page === "join.html") {
+        const joinForm = document.getElementById('joinForm');
+        const emailError = document.createElement('div');
+        emailError.classList.add('error-message');
+        document.getElementById('email').after(emailError);
+
+        const phoneError = document.createElement('div');
+        phoneError.classList.add('error-message');
+        document.getElementById('phone').after(phoneError);
+
+        if (joinForm) {
+          joinForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            emailError.textContent = '';
+            phoneError.textContent = '';
+
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const school = document.getElementById('school').value.trim();
+
+            let isValid = true;
+
+            // check if email is actually a email
+            const emailPattern = /^[^\s@]+@(gmail\.com|yahoo\.com|outlook\.com|hotmail\.com|icloud\.com)$/i;
+            if (!emailPattern.test(email)) {
+               emailError.textContent = "Please use an email from Gmail, Yahoo, Outlook, Hotmail, or iCloud.";
+               isValid = false;
+	    } 
+            // check if phone number is actually a phone number
+            const phonePattern = /^[89]\d{7}$/;
+            if (!phonePattern.test(phone)) {
+               phoneError.textContent = "Please enter an 8-digit number starting with 8 or 9."; 
+               isValid = false;
+            }
+
+            if (!isValid) return;
+            confetti({
+  particleCount: 200,   // more particles
+  spread: 90,           // wider spread
+  origin: { y: 0.6 },
+  scalar: 1.6           // make particles bigger
+});
+
+            loadPage(`thankyou.html?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&phone=${encodeURIComponent(phone)}&school=${encodeURIComponent(school)}`);
+          });
+        }
+      }
+
+      // After submitting the form
+      if (page.startsWith("thankyou.html")) {
+        const queryString = page.split("?")[1] || "";
+        const params = new URLSearchParams(queryString);
+        const name = params.get('name');
+        const email = params.get('email');
+        const phone = params.get('phone');
+        const school = params.get('school');
+        const formDataDiv = document.getElementById('formData');
+        if (formDataDiv) {
+          formDataDiv.innerHTML = `
+            <p><strong>Full Name:</strong> ${name || ''}</p>
+            <p><strong>Email:</strong> ${email || ''}</p>
+            <p><strong>Contact Number:</strong> ${phone || ''}</p>
+            <p><strong>School:</strong> ${school || ''}</p>
+          `;
+        }
+      }
+
+    } catch (error) {
+      dynamicContent.innerHTML = "<p>Error loading page.</p>";
+    }
+  }
+
+  links.forEach(link => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const page = this.getAttribute("data-target-page");
+      history.pushState({ page }, "", this.getAttribute("href"));
+      loadPage(page);
+    });
+  });
+
+  window.addEventListener("popstate", function (e) {
+    if (e.state && e.state.page) {
+      loadPage(e.state.page);
+    }
+  });
+
+  loadPage("home.html");
+});
+</script>
+
+</body>
+</html>

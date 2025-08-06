@@ -8,6 +8,9 @@
   </title>
   <link href="css/style.css" rel="stylesheet"/>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"> 
+  <!-- This is for the championship icon -->
+
   <style>
    .error-message {
       color: red;
@@ -17,9 +20,10 @@
   </style>
  </head>
  <body>
+  <!-- The is the Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-lg">
    <div class="container">
-    <a class="navbar-brand d-flex align-items-center" data-target-page="home.html" href="/">
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
      <img src="images/logo.png" alt="NYP Chess Club Logo" class="logo-img">
      <span>
       NYP Chess Club
@@ -32,32 +36,32 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
      <ul class="navbar-nav">
       <li class="nav-item">
-       <a class="nav-link" data-target-page="home.html" href="home.html">
+       <a class="nav-link" href="index.html">
         Home
        </a>
       </li>
       <li class="nav-item">
-       <a class="nav-link" data-target-page="about.html" href="about.html">
+       <a class="nav-link" href="about.html">
         About
        </a>
       </li>
       <li class="nav-item">
-       <a class="nav-link" data-target-page="learn.html" href="learn.html">
+       <a class="nav-link" href="learn.html">
         Learn
        </a>
       </li>
       <li class="nav-item">
-       <a class="nav-link" data-target-page="event.html" href="event.html">
+       <a class="nav-link" href="event.html">
         Event
        </a>
       </li>
       <li class="nav-item">
-       <a class="nav-link" data-target-page="contact.html" href="contact.html">
+       <a class="nav-link" href="contact.html">
         Contact
        </a>
       </li>
       <li class="nav-item">
-       <a class="btn btn-warning ms-3 fw-bold" data-target-page="join.html" href="join.html">
+       <a class="btn btn-warning ms-3 fw-bold" href="join.html">
         Join
        </a>
       </li>
@@ -68,8 +72,168 @@
   <!-- countdown timer display -->
   <div class="fw-bold fs-4 text-danger text-center py-3" id="countdown-timer">
   </div>
-  <div id="dynamic-content">
+  <!-- This is the Hero Section -->
+  <main><section class="bg-light py-5 text-center">
+    <div class="container">
+      <div style="display: flex;flex-direction:column;align-items:center;">
+        <img class="rounded-circle mb-2" alt="Magnus Carlsen" src="images/carlsen.jpeg" style="width:150px;height:150px;object-fit:cover;">
+        <iframe src="fide.html"
+          style="background:transparent;overflow:hidden;border:none;height:3em;width:300px;margin-bottom:15px;"
+          scrolling="no"></iframe>
+      </div>
+
+      <h1 class="display-4 fw-bold">
+        NYP<br><span class="text-primary">Chess Club</span>
+      </h1>
+      <p style="font-size:1.2rem;" class="fst-italic text-secondary mb-2">
+        think it, play it, win it
+      </p>
+      <p class="lead">
+        Make full use of your analytical skills with the NYP Chess Club!
+        Whether you're learning the basics or you're a seasoned player, our club provides a welcoming and focused environment for everyone to enjoy, grow, and challenge themselves through the game of chess.
+      </p>
+      <!-- Thi is the Stats Cards -->
+      <div class="row mt-5">
+        <div class="mb-4 col-md-4">
+          <div class="h-100 p-3 bg-white shadow-sm rounded">
+            <i class="bi bi-people mb-2 fs-1"></i>
+        <h4><span id="gamesCounter">0</span>+</h4>
+<p>Games Played Monthly</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="rounded h-100 shadow-sm p-3 bg-white">
+            <i class="bi bi-trophy mb-2 fs-1"></i>
+            <h4>1</h4>
+            <p>InterPoly Title Won</p>
+          </div>
+        </div>
+        <div class="mb-4 col-md-4">
+          <div class="rounded shadow-sm bg-white h-100 p-3">
+            <i class="bi bi-clock mb-2 fs-1"></i>
+            <h4>2x</h4>
+            <p>Training Sessions Weekly</p>
+          </div>
+        </div>
+      </div>
+
+<!-- This is the testimonials Carousel -->
+<div class="mt-5">
+  <h3 class="fw-bold text-center mb-4">What Our Members Say</h3>
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+
+          <div class="carousel-item active">
+            <div class="card shadow-sm border-0">
+              <div class="d-flex card-body align-items-center">
+                <img src="images/student1.jpg" alt="Melissa Tan Year 1 SIT" class="rounded-circle me-3 member-photo">
+                <div class="text-start">
+                  <p class="mb-2 card-text">
+                    "NYP Chess Club is definitely the highlight of my poly life. I met cool and smart people there and made a lot of new friends."
+                  </p>
+                  <h6 class="card-subtitle text-muted">– Melissa Tan, Year 1, SIT</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="card shadow-sm border-0">
+              <div class="d-flex card-body align-items-center">
+                <img src="images/student2m.jpg" alt="Peter Tan Year 2 School of Engineering" class="rounded-circle me-3 member-photo">
+                <div class="text-start">
+                  <p class="mb-2 card-text">
+                    "From 300+ FIDE to 1800 FIDE. I cannot believe I did it in a year."
+                  </p>
+                  <h6 class="text-muted card-subtitle">– Peter Tan, Year 2, School of Engineering</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="card shadow-sm border-0">
+              <div class="d-flex card-body align-items-center">
+                <img src="images/student5.jpg" alt="Han XiangRui, Year 1, SIT" class="rounded-circle me-3 member-photo">
+                <div class="text-start">
+                  <p class="mb-2 card-text">
+                    "The leaders are chill and welcoming. I feel at ease in the club."
+                  </p>
+                  <h6 class="text-muted card-subtitle">– Han XiangRui, Year 1, SIT</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
   </div>
+</div>
+
+      <div class="my-5">
+        <blockquote class="blockquote text-center">
+          <p id="quote" class="mb-3 fs-4 fst-italic"></p>
+        </blockquote>
+      </div>
+      <!-- This is the Comitte Section -->
+      <div class="my-5">
+  <h3 class="fw-bold text-center mb-4">Meet Our Committee</h3>
+  <div class="row g-4 justify-content-center">
+
+    <div class="col-md-3 col-6">
+      <div class="card border-0 text-center shadow-sm">
+        <img alt="Andy Lim" src="images/andy.jpg" class="mx-auto mt-3 card-img-top rounded-circle" style="width:100px;height:100px;object-fit:cover;">
+        <div class="card-body">
+          <h5 class="card-title mb-0">Andy Lim</h5>
+          <div class="text-primary mb-1">
+            Blitz: <span class="blitz-rating" data-username="andylim190168">Loading...</span>
+          </div>
+          <p class="small card-text text-muted">President</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="shadow-sm text-center card border-0">
+        <img alt="Jane Lee" src="images/student3.jpg" class="mx-auto mt-3 card-img-top rounded-circle" style="width:100px;height:100px;object-fit:cover;">
+        <div class="card-body">
+          <h5 class="mb-0 card-title">Jane Lee</h5>
+          <div class="mb-1 text-primary">
+            Blitz: <span class="blitz-rating" data-username="janelee77">Loading...</span>
+          </div>
+          <p class="text-muted card-text small">Vice President</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="border-0 card shadow-sm text-center">
+        <img class="mx-auto mt-3 rounded-circle card-img-top" src="images/student4.jpg" style="width:100px;height:100px;object-fit:cover;" alt="Rahul Kumar">
+        <div class="card-body">
+          <h5 class="mb-0 card-title">Rahul Kumar</h5>
+          <div class="mb-1 text-primary">
+            Blitz: <span class="blitz-rating" data-username="rahulkumar88">Loading...</span>
+          </div>
+          <p class="text-muted card-text small">Secretary</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>	
+
+    </div>
+  </section></main>
+  <!-- This is the footer -->
   <footer class="bg-primary text-warning py-5" style="background-color:#0a1930 !important;">
    <div class="container">
     <div class="row">
@@ -87,32 +251,32 @@
       </h5>
       <ul class="list-unstyled">
        <li>
-        <a class="fw-semibold text-warning text-decoration-none" data-target-page="home.html" href="home.html">
+        <a class="fw-semibold text-warning text-decoration-none" href="index.html">
          Home
         </a>
        </li>
        <li>
-        <a class="fw-semibold text-warning text-decoration-none" data-target-page="about.html" href="about.html">
+        <a class="fw-semibold text-warning text-decoration-none" href="about.html">
          About
         </a>
        </li>
        <li>
-        <a class="fw-semibold text-warning text-decoration-none" data-target-page="learn.html" href="learn.html">
+        <a class="fw-semibold text-warning text-decoration-none" href="learn.html">
          Learn
         </a>
        </li>
        <li>
-        <a class="fw-semibold text-warning text-decoration-none" data-target-page="event.html" href="event.html">
+        <a class="fw-semibold text-warning text-decoration-none" href="event.html">
          Event
         </a>
        </li>
        <li>
-        <a class="fw-semibold text-warning text-decoration-none" data-target-page="contact.html" href="contact.html">
+        <a class="fw-semibold text-warning text-decoration-none" href="contact.html">
          Contact
         </a>
        </li>
        <li>
-        <a class="fw-semibold text-warning text-decoration-none" data-target-page="join.html" href="join.html">
+        <a class="fw-semibold text-warning text-decoration-none" href="join.html">
          Join
         </a>
        </li>
@@ -140,10 +304,30 @@
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
   </script>
-  
+  <script>
+  //this is a simple gamecounter script. This animate counting from 0 to 100+ to show games played monthly.the target and speed can be changed
+  const counterEl = document.getElementById('gamesCounter');
+  if (counterEl) {
+    let count = 0;
+    const target = 100;
+    const speed = 10;
+
+    const updateCounter = () => {
+      if (count < target) {
+        count++;
+        counterEl.textContent = count;
+        setTimeout(updateCounter, speed);
+      } else {
+        counterEl.textContent = target;
+      }
+    };
+
+    updateCounter();
+  }
+</script>
   <script>
   // ===== Countdown Timer ===== 
-  // Displays remaining time until NYP NDP Chess Competition
+  // Displays remaining time until NYP NDP Chess Competition. intentionally put it sep 9 for the project
    const eventDate = new Date("2025-09-08T10:00:00");
 function updateCountdown() {
   const now = new Date();
@@ -164,14 +348,7 @@ function updateCountdown() {
 updateCountdown();
 const timer = setInterval(updateCountdown, 1000);
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js">
-  </script>
-  <!-- ===== SPA Loader =====  -->
-  <!-- Dynamically loads page content without full reload -->
   <script>
-   document.addEventListener("DOMContentLoaded", function () {
-  const links = document.querySelectorAll("[data-target-page]");
-  const dynamicContent = document.getElementById("dynamic-content");
 // Fetch chess blitz rating from Chess.com API for a given username
 async function fetchBlitzRating(username) {
   try {
@@ -184,6 +361,7 @@ async function fetchBlitzRating(username) {
     return "Error";
   }
 }
+
 // Update all blitz ratings on the page
 async function updateBlitzRatings() {
   const spans = document.querySelectorAll(".blitz-rating[data-username]");
@@ -194,135 +372,7 @@ async function updateBlitzRatings() {
     span.textContent = rating;
   }
 }
-  // Main SPA loader function
-  async function loadPage(page) {
-    try {
-      const response = await fetch(page.split("?")[0]);
-      const html = await response.text();
-      dynamicContent.innerHTML = html;
-
-      // counter
-      if (page === "home.html") {
-        const counterEl = document.getElementById('gamesCounter');
-        if (counterEl) {
-          let count = 0;
-          const target = 100;
-          const speed = 20;
-          const updateCounter = () => {
-            if (count < target) {
-              count++;
-              counterEl.textContent = count;
-              setTimeout(updateCounter, speed);
-            } else {
-              counterEl.textContent = target;
-            }
-          };
-          updateCounter();
-        }updateBlitzRatings();
-//The quote can be randomized. For UX purpose, we decided fixed quote is better aesthetically
-const quotes = [ 
-  "I’ve never been much of a materialist. The joy of playing chess is enough. - Carlsen"
-];
-
-  const quoteElement = document.getElementById("quote");
-  if (quoteElement) {
-    const randomIndex = Math.floor(Math.random() * quotes.length);
-    quoteElement.textContent = `“${quotes[randomIndex]}”`;
-  }
-      }
-
-      // handling incline error
-      if (page === "join.html") {
-        const joinForm = document.getElementById('joinForm');
-        const emailError = document.createElement('div');
-        emailError.classList.add('error-message');
-        document.getElementById('email').after(emailError);
-
-        const phoneError = document.createElement('div');
-        phoneError.classList.add('error-message');
-        document.getElementById('phone').after(phoneError);
-        // ===== Form Validation =====
-        // Validates email and phone, triggers confetti on success
-        if (joinForm) {
-          joinForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-            emailError.textContent = '';
-            phoneError.textContent = '';
-
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const phone = document.getElementById('phone').value.trim();
-            const school = document.getElementById('school').value.trim();
-
-            let isValid = true;
-
-            // check if email is actually a email
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/i;
-            if (!emailPattern.test(email)) {
-              emailError.textContent = "Please enter a valid email address.";
-              isValid = false;
-            }
-            // check if phone number is actually a phone number. this require 8 digit number starting with 8 or 9
-            const phonePattern = /^[89]\d{7}$/;
-            if (!phonePattern.test(phone)) {
-               phoneError.textContent = "Please enter an 8-digit number starting with 8 or 9."; 
-               isValid = false;
-            }
-
-            if (!isValid) return;
-            confetti({
-  particleCount: 200,   // more particles
-  spread: 90,           // wider spread
-  origin: { y: 0.6 },
-  scalar: 1.6           // make particles bigger
-});
-
-loadPage(`thankyou.html?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&phone=${encodeURIComponent(phone)}&school=${encodeURIComponent(school)}`);
-          });
-                }
-                    }
-                    
-      // After submitting the form
-      if (page.startsWith("thankyou.html")) {
-        const queryString = page.split("?")[1] || "";
-        const params = new URLSearchParams(queryString);
-        const name = params.get('name');
-        const email = params.get('email');
-        const phone = params.get('phone');
-        const school = params.get('school');
-        const formDataDiv = document.getElementById('formData');
-        if (formDataDiv) {
-          formDataDiv.innerHTML = `
-            <p><strong>Full Name:</strong> ${name || ''}</p>
-            <p><strong>Email:</strong> ${email || ''}</p>
-            <p><strong>Contact Number:</strong> ${phone || ''}</p>
-            <p><strong>School:</strong> ${school || ''}</p>
-          `;
-        }
-      }
-
-    } catch (error) {
-      dynamicContent.innerHTML = "<p>Error loading page.</p>";
-    }
-  }
-
-  links.forEach(link => {
-    link.addEventListener("click", function (e) {
-      e.preventDefault();
-      const page = this.getAttribute("data-target-page");
-      history.pushState({ page }, "", this.getAttribute("href"));
-      loadPage(page);
-    });
-  });
-
-  window.addEventListener("popstate", function (e) {
-    if (e.state && e.state.page) {
-      loadPage(e.state.page);
-    }
-  });
-
-  loadPage("home.html");
-});
-  </script>
- </body>
+updateBlitzRatings();
+</script>
+  </body>
 </html>

@@ -72,7 +72,7 @@
   <!-- countdown timer display -->
   <div class="fw-bold fs-4 text-danger text-center py-3" id="countdown-timer">
   </div>
-  <!-- This is the Hero Section -->
+  <!-- This is the Hero Section. I seperated Fide.html because I used python to overwrite the rating. Check readme-->
   <main><section class="bg-light py-5 text-center">
     <div class="container">
       <div style="display: flex;flex-direction:column;align-items:center;">
@@ -233,7 +233,7 @@
 
     </div>
   </section></main>
-  <!-- This is the footer -->
+  <!-- This is the footer with the links and the chess club info -->
   <footer class="bg-primary text-warning py-5" style="background-color:#0a1930 !important;">
    <div class="container">
     <div class="row">
@@ -325,38 +325,19 @@
     updateCounter();
   }
 </script>
-  <script>
-  // ===== Countdown Timer ===== 
-  // Displays remaining time until NYP NDP Chess Competition. intentionally put it sep 9 for the project
-   const eventDate = new Date("2025-09-08T10:00:00");
-function updateCountdown() {
-  const now = new Date();
-  const diff = eventDate - now;
-  const timerEl = document.getElementById("countdown-timer");
-  if (!timerEl) return;
-  if (diff <= 0) {
-    timerEl.textContent = "Event Started!";
-    clearInterval(timer);
-    return;
-  }
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((diff / (1000 * 60)) % 60);
-  const seconds = Math.floor((diff / 1000) % 60);
-  timerEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s left to NYP NDP Chess Competition`;
-}
-updateCountdown();
-const timer = setInterval(updateCountdown, 1000);
-  </script>
+  <script src="js/countdown.js"></script>
   <script>
 // Fetch chess blitz rating from Chess.com API for a given username
 async function fetchBlitzRating(username) {
   try {
+    //there is a API endpoint for this player stats
     const res = await fetch(`https://api.chess.com/pub/player/${encodeURIComponent(username)}/stats`);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
+    //if the fetch is null, return N/A
     return data.chess_blitz?.last?.rating ?? "N/A";
   } catch (e) {
+    //error logging
     console.error("fetchBlitzRating error:", e);
     return "Error";
   }

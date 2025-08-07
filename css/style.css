@@ -37,10 +37,12 @@ header::before, .hero-section::before {
   content: none;
 }
 
-/* Buttons */
+/* Buttons Styling */
 .btn-primary {
-  background-color: #0a1930;
+  /* Dark navy blue */
+  background-color: #0a1930; 
   border: none;
+  /* Smooth hover transition */
   transition: background 0.3s ease;
 }
 .btn-primary:hover {
@@ -113,15 +115,19 @@ video {
   max-width: 100%;
   border-radius: 8px;
 }
+/* Cursor turns into pointer for clickable item */
 .cursor-pointer {
   cursor: pointer;
 }
+/* Logo image heeight in Navbar */
 .logo-img {
   height: 70px;
 }
+/* Utility class to remove margins */
 .no-margin {
   margin: 0;
 }
+/* Custom member image in About page */
 .member-photo {
   width: 70px;
   height: 70px;
